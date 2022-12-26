@@ -1,27 +1,20 @@
 "use strict";
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-const banck = prompt('Скок денег', '');
-let sum = 0;
-const TAX_RATE = 0.08;
-const PHONE_PRICE = 99.99;
-const ACCESSORY_PRICE = 9.99;
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    praivat: false
+};
 
-function sumTax(q) {
-    return q * TAX_RATE;
- }
+const a = prompt("Один из последних просмотренных фильмов?", ""),
+    b = prompt("На сколько оцените его?", ""),
+    c = prompt("Один из последних просмотренных фильмов?", ""),
+    d = prompt("На сколько оцените его?", "");
 
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-do{
-    sum += PHONE_PRICE;
-    sum += ACCESSORY_PRICE;
-}
-while (sum < banck);
- 
-
-
-if(sum > banck){
-    sum -= PHONE_PRICE;
-    sum -= ACCESSORY_PRICE;
-}
-
-console.log(Math.round(sum));
+console.log(personalMovieDB);
